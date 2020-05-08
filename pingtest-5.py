@@ -10,8 +10,8 @@ for ip in all_host:
     output = subprocess.Popen(["ping" , "-c 1" , str(ip)], stderr=subprocess.PIPE, stdout=subprocess.PIPE)
     output = output.communicate()[0]
     #print(output)
-    if "received" == 0 in output:
-        print(f"{ip} is Offline")
-    else:
+    if output == 0 in output:
         print(f"{ip} is Online")
+    else:
+        print(f"{ip} is Offline")
     
